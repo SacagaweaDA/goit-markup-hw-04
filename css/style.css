@@ -176,13 +176,14 @@ body {
 
 .hero {
   background-color: var(--hero-section-color);
-  text-align: center;
-  padding: 200px 0;
-  background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+  background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
     url(../img/hero.jpg);
-  max-width: 1600px;
   background-repeat: no-repeat;
   background-position: center;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 200px 0px;
+  text-align: center;
 }
 
 .hero-title {
@@ -272,10 +273,11 @@ body {
 
 .features-bg {
   width: 270px;
+  min-height: 120px;
   background-color: var(--team-section-color);
   display: flex;
   justify-content: center;
-  padding: 25px 100px;
+  align-items: center;
   margin-bottom: 30px;
   border-radius: 4px;
 }
@@ -346,11 +348,11 @@ body {
 .li-icon-team {
   width: 44px;
   height: 44px;
-  border-radius: 50%;
-  background-color: var(--background-color);
+
+  /* background-color: var(--background-color);
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: center; */
 }
 
 .team-icons {
@@ -365,19 +367,32 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
 }
 
-.li-icon-team:hover {
+/* .li-icon-team:hover,
+.li-icon-team:focus {
   background-color: var(--accent-color);
 }
 
-.li-icon-team:hover,
 .li-icon-team:focus {
   background-color: var(--accent-color);
 }
 
 .li-icon-team:hover .team-icons,
 .li-icon-team:focus .team-icons {
+  fill: var(--additional-text-color);
+} */
+
+.team-icons-list > li > a:hover,
+.team-icons-list > li > a:focus {
+  background-color: var(--accent-color);
+}
+
+.team-icons-list > li > a:hover .team-icons,
+.team-icons-list > li > a:focus .team-icons {
   fill: var(--additional-text-color);
 }
 
@@ -388,13 +403,25 @@ body {
   flex-wrap: nowrap;
 }
 
-.clients-bg {
+.li-client {
   width: 170px;
+  height: 92px;
   background-color: var(--background-color);
   display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 4px;
+}
+
+.client-soc-link {
+  display: flex;
+  align-items: center;
   justify-content: center;
   border: 1px solid #afb1b8;
   border-radius: 4px;
+  width: 100%;
+  height: 100%;
 }
 
 .li-client:not(:last-child) {
@@ -403,15 +430,14 @@ body {
 
 .clients-icons {
   fill: var(--icons-color);
-  width: 170px;
-  height: 92px;
 }
 
-.clients-bg:hover {
+.clients-list > li > a:hover,
+.clients-list > li > a:focus {
   border-color: var(--accent-color);
 }
-
-.clients-bg:hover .clients-icons {
+.clients-list > li > a:hover .clients-icons,
+.clients-list > li > a:focus .clients-icons {
   fill: var(--accent-color);
 }
 
@@ -475,6 +501,7 @@ body {
 
 .soc-footer {
   background-color: #44454e;
+  border-radius: 50%;
 }
 
 .team-icons.color {
@@ -489,12 +516,10 @@ body {
 }
 
 .filter-menu {
-  font-family: inherit;
-  font-weight: 500;
-  line-height: 1.62;
-  margin-bottom: 50px;
+  list-style: none;
   display: flex;
   justify-content: center;
+  margin-bottom: 50px;
 }
 
 .li-button:not(:last-child) {
@@ -504,10 +529,14 @@ body {
 .filter-item {
   color: var(--title-text-color);
   background-color: var(--team-section-color);
-  border-style: none;
-  cursor: pointer;
-  border-radius: 4px;
+  border: none;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.62;
+  text-align: center;
+
   padding: 6px 22px;
+  border-radius: 4px;
 }
 
 .filter-item:hover,
@@ -543,13 +572,22 @@ body {
 
 .link-block {
   text-decoration: none;
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
-.li-shadow:hover {
+/* .li-shadow:hover {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
-    1px 4px 6px rgba(0, 0, 0, 0.16);
+    1px 4px 6px rgba(0, 0, 0, 0.16); */
 }
 
 .filter-menu .filter-item.current {
   color: var(--accent-color);
+}
+
+.list-block > li > a:hover,
+.list-block > li > a:focus {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
 }
